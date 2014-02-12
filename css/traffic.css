@@ -1,0 +1,18 @@
+#container {
+	position: relative;
+	height: 700px;
+	background-color: #ccc;
+}
+
+.car {
+	position: absolute;
+	background-color: #333;
+	width: 50px;
+	height: 100px;
+	border-radius: 5px;
+	display: none;
+}
+
+.car.display {
+	display: block;
+}
