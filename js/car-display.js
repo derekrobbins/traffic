@@ -12,13 +12,13 @@
 	};
 
 	Traffic.View.Car.prototype.show = function(oArgs) {
-		this.update(oArgs);
 		this.el.addClass('display');
 	};
 
 	Traffic.View.Car.prototype.update = function(oArgs) {
-		var x 			= this.parentX + (oArgs.x * 1),
-			y 			= this.parentY + (oArgs.y * 1),
+		var position 	= oArgs.position,
+		 	x 			= this.parentX + position.x * 10,
+		 	y 			= this.parentY + position.y * 10,
 			css 		= '',
 			cssTemplate = 'transform: rotate(' + oArgs.angle + 'deg) translate(' + x + 'px,' + y + 'px);';
 
@@ -27,8 +27,6 @@
 		css += '-ms-' + cssTemplate;
 		css += '-o-' + cssTemplate;
 		css += cssTemplate;
-
-		console.log(this.el);
 
 		this.el.attr('style', css);
 	};
